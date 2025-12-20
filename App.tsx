@@ -4,6 +4,8 @@ import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import Home from './pages/Home.tsx';
 import Contact from './pages/Contact.tsx';
+import Work from './pages/Work.tsx';
+import Studio from './pages/Studio.tsx';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -22,6 +24,8 @@ const App: React.FC = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/studio" element={<Studio />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

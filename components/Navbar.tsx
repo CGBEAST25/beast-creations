@@ -29,32 +29,25 @@ const Navbar: React.FC = () => {
     };
   }, [isMobileMenuOpen]);
 
-  const navLinks = [
-    { label: 'Work', id: 'work' },
-    { label: 'Services', id: 'services' },
-    { label: 'Studio', id: 'about' },
-  ];
-
   const handleNavClick = () => setIsMobileMenuOpen(false);
 
-  const scrollToSection = (e: React.MouseEvent, id: string) => {
+  const handleServicesClick = (e: React.MouseEvent) => {
     e.preventDefault();
     handleNavClick();
     
-    if (location.pathname !== '/') {
-      navigate('/');
-      // Use a timeout to allow the navigation to complete and component to mount
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(id);
+    const scrollToServices = () => {
+      const element = document.getElementById('services');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+    };
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to home to complete
+      setTimeout(scrollToServices, 100);
+    } else {
+      scrollToServices();
     }
   };
 
@@ -64,12 +57,17 @@ const Navbar: React.FC = () => {
   // Show Contact link only if not on contact page
   const showContactLink = location.pathname !== '/contact';
 
-  // When menu is open, remove backdrop blur to prevent "containing block" issues for fixed children
   const navBackgroundClass = isMobileMenuOpen 
     ? 'bg-transparent' 
     : isScrolled 
       ? 'bg-beast-black/80 backdrop-blur-md border-b border-zinc-800' 
       : 'bg-transparent';
+
+  const navLinks = [
+    { label: 'Work', path: '/work', isScroll: false },
+    { label: 'Services', path: '#services', isScroll: true },
+    { label: 'Studio', path: '/studio', isScroll: false },
+  ];
 
   return (
     <nav 
@@ -91,16 +89,28 @@ const Navbar: React.FC = () => {
               Home
             </Link>
           )}
+          
           {navLinks.map((link) => (
-            <a 
-              key={link.label} 
-              href={`#${link.id}`}
-              onClick={(e) => scrollToSection(e, link.id)}
-              className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-            >
-              {link.label}
-            </a>
+            link.isScroll ? (
+              <a 
+                key={link.label}
+                href={link.path}
+                onClick={handleServicesClick}
+                className="text-sm font-medium text-zinc-400 hover:text-white transition-colors cursor-pointer"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.label}
+                to={link.path}
+                className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            )
           ))}
+
           {showContactLink && (
             <Link 
               to="/contact" 
@@ -139,16 +149,29 @@ const Navbar: React.FC = () => {
                     Home
                   </Link>
                 )}
+                
                 {navLinks.map((link) => (
-                  <a 
-                    key={link.label} 
-                    href={`#${link.id}`}
-                    className="text-3xl font-display font-medium text-white"
-                    onClick={(e) => scrollToSection(e, link.id)}
-                  >
-                    {link.label}
-                  </a>
+                  link.isScroll ? (
+                    <a 
+                      key={link.label}
+                      href={link.path}
+                      onClick={handleServicesClick}
+                      className="text-3xl font-display font-medium text-white cursor-pointer"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.label}
+                      to={link.path}
+                      onClick={handleNavClick}
+                      className="text-3xl font-display font-medium text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  )
                 ))}
+
                 {showContactLink && (
                   <Link 
                     to="/contact" 
