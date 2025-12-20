@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SectionProps } from '../types';
+import { SectionProps } from '../types.ts';
 
 const Section: React.FC<SectionProps> = ({ id, className = '', children }) => {
   return (

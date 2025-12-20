@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Section from '../components/Section';
-import Button from '../components/Button';
+import Section from '../components/Section.tsx';
+import Button from '../components/Button.tsx';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -13,7 +13,6 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate submission
     setTimeout(() => setSubmitted(true), 1000);
   };
 

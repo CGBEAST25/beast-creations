@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, CheckCircle2, Video, Layers, ShieldCheck, Cpu } from 'lucide-react';
-import Section from '../components/Section';
-import Button from '../components/Button';
+import Section from '../components/Section.tsx';
+import Button from '../components/Button.tsx';
 
 const Home: React.FC = () => {
   return (
@@ -104,7 +104,6 @@ const Home: React.FC = () => {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden">
-             {/* Placeholder for abstract cinematic imagery */}
             <img 
               src="https://picsum.photos/800/800?grayscale" 
               alt="Cinematic Abstract" 
