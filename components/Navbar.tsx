@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Aperture } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -7,6 +7,7 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,12 +30,33 @@ const Navbar: React.FC = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { label: 'Work', href: '/#work' },
-    { label: 'Services', href: '/#services' },
-    { label: 'Studio', href: '/#about' },
+    { label: 'Work', id: 'work' },
+    { label: 'Services', id: 'services' },
+    { label: 'Studio', id: 'about' },
   ];
 
   const handleNavClick = () => setIsMobileMenuOpen(false);
+
+  const scrollToSection = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    handleNavClick();
+    
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Use a timeout to allow the navigation to complete and component to mount
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   // Show Home link only if not on homepage
   const showHomeLink = location.pathname !== '/';
@@ -72,7 +94,8 @@ const Navbar: React.FC = () => {
           {navLinks.map((link) => (
             <a 
               key={link.label} 
-              href={link.href} 
+              href={`#${link.id}`}
+              onClick={(e) => scrollToSection(e, link.id)}
               className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
             >
               {link.label}
@@ -119,9 +142,9 @@ const Navbar: React.FC = () => {
                 {navLinks.map((link) => (
                   <a 
                     key={link.label} 
-                    href={link.href} 
+                    href={`#${link.id}`}
                     className="text-3xl font-display font-medium text-white"
-                    onClick={handleNavClick}
+                    onClick={(e) => scrollToSection(e, link.id)}
                   >
                     {link.label}
                   </a>

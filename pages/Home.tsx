@@ -41,8 +41,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* What We Do */}
-      <Section className="border-t border-zinc-900/50">
+      {/* What We Do / Work */}
+      <Section id="work" className="border-t border-zinc-900/50">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
