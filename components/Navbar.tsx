@@ -38,6 +38,9 @@ const Navbar: React.FC = () => {
 
   // Show Home link only if not on homepage
   const showHomeLink = location.pathname !== '/';
+  
+  // Show Contact link only if not on contact page
+  const showContactLink = location.pathname !== '/contact';
 
   // When menu is open, remove backdrop blur to prevent "containing block" issues for fixed children
   const navBackgroundClass = isMobileMenuOpen 
@@ -75,12 +78,14 @@ const Navbar: React.FC = () => {
               {link.label}
             </a>
           ))}
-          <Link 
-            to="/contact" 
-            className="text-sm font-medium bg-white text-black px-5 py-2 hover:bg-zinc-200 transition-colors"
-          >
-            Start Project
-          </Link>
+          {showContactLink && (
+            <Link 
+              to="/contact" 
+              className="text-sm font-medium bg-white text-black px-5 py-2 hover:bg-zinc-200 transition-colors"
+            >
+              Start Project
+            </Link>
+          )}
         </div>
 
         {/* Mobile Toggle */}
@@ -121,13 +126,15 @@ const Navbar: React.FC = () => {
                     {link.label}
                   </a>
                 ))}
-                <Link 
-                  to="/contact" 
-                  className="text-3xl font-display font-medium text-zinc-400"
-                  onClick={handleNavClick}
-                >
-                  Contact
-                </Link>
+                {showContactLink && (
+                  <Link 
+                    to="/contact" 
+                    className="text-3xl font-display font-medium text-zinc-400"
+                    onClick={handleNavClick}
+                  >
+                    Contact
+                  </Link>
+                )}
               </div>
             </motion.div>
           )}
