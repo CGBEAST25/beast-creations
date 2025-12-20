@@ -149,7 +149,7 @@ const Studio: React.FC = () => {
             Let’s Build Something <br/> Intentional.
           </h2>
           <p className="text-zinc-400 mb-8">Clear process. Cinematic results. Professional delivery.</p>
-          <Button href="/contact" withArrow className="text-lg px-10 py-5">
+          <Button href="#/contact" withArrow className="text-lg px-10 py-5">
             Start Your Project
           </Button>
         </div>

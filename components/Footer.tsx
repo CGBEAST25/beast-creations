@@ -19,9 +19,9 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="text-white font-medium mb-6">Studio</h4>
           <ul className="space-y-4">
-            <li><a href="/#work" className="text-zinc-500 hover:text-white transition-colors text-sm">Work</a></li>
-            <li><a href="/#services" className="text-zinc-500 hover:text-white transition-colors text-sm">Services</a></li>
-            <li><a href="/#about" className="text-zinc-500 hover:text-white transition-colors text-sm">About</a></li>
+            <li><Link to="/work" className="text-zinc-500 hover:text-white transition-colors text-sm">Work</Link></li>
+            <li><Link to="/" className="text-zinc-500 hover:text-white transition-colors text-sm">Services</Link></li>
+            <li><Link to="/" className="text-zinc-500 hover:text-white transition-colors text-sm">About</Link></li>
           </ul>
         </div>
 
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
           <div className="flex space-x-4">
             <a href="https://www.instagram.com/beastcreations.ai" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
             <a href="https://x.com/Beast_creations" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
-            <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
+            <a href="https://www.linkedin.com/company/beastcreations" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
           </div>
         </div>
       </div>

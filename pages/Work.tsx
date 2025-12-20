@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { MessageCircle } from 'lucide-react';
 import Section from '../components/Section.tsx';
 import Button from '../components/Button.tsx';
 
@@ -65,7 +66,7 @@ const Work: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Button href="/contact" withArrow>Start Your Project</Button>
+            <Button href="#/contact" withArrow>Start Your Project</Button>
           </motion.div>
         </div>
       </Section>
@@ -128,9 +129,21 @@ const Work: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-8">
             Ready to create your <br/> cinematic AI video?
           </h2>
-          <Button href="/contact" withArrow className="text-lg px-10 py-5">
-            Start Your Project
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button href="#/contact" withArrow className="text-lg px-10 py-5">
+              Start Your Project
+            </Button>
+            <Button 
+              href="https://wa.me/message/5OMWC2DV3JRFC1" 
+              variant="outline"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg px-10 py-5 flex items-center gap-2"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span>Chat on WhatsApp</span>
+            </Button>
+          </div>
           <p className="mt-6 text-sm text-zinc-500">
             We respond within 24 hours and guide you through the full production process.
           </p>
