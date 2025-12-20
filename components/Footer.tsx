@@ -36,8 +36,8 @@ const Footer: React.FC = () => {
         <div>
           <h4 className="text-white font-medium mb-6">Connect</h4>
           <div className="flex space-x-4">
-            <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
-            <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
+            <a href="https://www.instagram.com/beastcreations.ai" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
+            <a href="https://x.com/Beast_creations" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
             <a href="#" className="text-zinc-500 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
           </div>
         </div>
