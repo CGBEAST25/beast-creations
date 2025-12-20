@@ -10,6 +10,8 @@ interface ButtonProps {
   withArrow?: boolean;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
+  target?: string;
+  rel?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ 
@@ -19,7 +21,9 @@ const Button: React.FC<ButtonProps> = ({
   href, 
   withArrow = false,
   className = '',
-  type = 'button'
+  type = 'button',
+  target,
+  rel
 }) => {
   const baseStyles = "inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-wide transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-beast-black disabled:opacity-50 disabled:cursor-not-allowed";
   
@@ -42,6 +46,8 @@ const Button: React.FC<ButtonProps> = ({
     return (
       <motion.a 
         href={href} 
+        target={target}
+        rel={rel}
         className={combinedClasses}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}

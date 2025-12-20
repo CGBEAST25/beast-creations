@@ -7,7 +7,6 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +16,18 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { label: 'Work', href: '/#work' },
     { label: 'Services', href: '/#services' },
@@ -25,11 +36,19 @@ const Navbar: React.FC = () => {
 
   const handleNavClick = () => setIsMobileMenuOpen(false);
 
+  // Show Home link only if not on homepage
+  const showHomeLink = location.pathname !== '/';
+
+  // When menu is open, remove backdrop blur to prevent "containing block" issues for fixed children
+  const navBackgroundClass = isMobileMenuOpen 
+    ? 'bg-transparent' 
+    : isScrolled 
+      ? 'bg-beast-black/80 backdrop-blur-md border-b border-zinc-800' 
+      : 'bg-transparent';
+
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-beast-black/80 backdrop-blur-md border-b border-zinc-800' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBackgroundClass}`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2 z-50 group" onClick={handleNavClick}>
@@ -39,6 +58,14 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
+          {showHomeLink && (
+            <Link 
+              to="/" 
+              className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+            >
+              Home
+            </Link>
+          )}
           {navLinks.map((link) => (
             <a 
               key={link.label} 
@@ -71,14 +98,24 @@ const Navbar: React.FC = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.2 }}
               className="fixed inset-0 bg-beast-black flex flex-col items-center justify-center md:hidden z-40"
             >
               <div className="flex flex-col items-center space-y-8">
+                {showHomeLink && (
+                  <Link 
+                    to="/" 
+                    className="text-3xl font-display font-medium text-white"
+                    onClick={handleNavClick}
+                  >
+                    Home
+                  </Link>
+                )}
                 {navLinks.map((link) => (
                   <a 
                     key={link.label} 
                     href={link.href} 
-                    className="text-2xl font-display font-medium text-white"
+                    className="text-3xl font-display font-medium text-white"
                     onClick={handleNavClick}
                   >
                     {link.label}
@@ -86,7 +123,7 @@ const Navbar: React.FC = () => {
                 ))}
                 <Link 
                   to="/contact" 
-                  className="text-2xl font-display font-medium text-zinc-400"
+                  className="text-3xl font-display font-medium text-zinc-400"
                   onClick={handleNavClick}
                 >
                   Contact

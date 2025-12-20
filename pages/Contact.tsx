@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { MessageCircle } from 'lucide-react';
 import Section from '../components/Section.tsx';
 import Button from '../components/Button.tsx';
 
@@ -26,7 +27,20 @@ const Contact: React.FC = () => {
         <div className="w-full max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold font-display text-white mb-4">Start a Project</h1>
-            <p className="text-zinc-400">Tell us about your vision. We'll handle the rest.</p>
+            <p className="text-zinc-400 mb-8">Tell us about your vision. We'll handle the rest.</p>
+            
+            <div className="flex justify-center">
+              <Button 
+                href="https://wa.me/message/5OMWC2DV3JRFC1" 
+                variant="secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Chat on WhatsApp</span>
+              </Button>
+            </div>
           </div>
 
           {submitted ? (
@@ -84,7 +98,8 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="pt-8 text-center">
-                <Button type="submit" className="w-full md:w-auto px-12">Submit Inquiry</Button>
+                <Button type="submit" className="w-full md:w-auto px-12">Submit</Button>
+                <p className="mt-4 text-xs text-zinc-500 font-medium">We'll respond within 24 hours.</p>
               </div>
             </form>
           )}
