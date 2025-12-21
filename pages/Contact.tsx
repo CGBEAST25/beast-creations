@@ -14,21 +14,7 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Construct the mailto link
-    // REPLACE 'hello@beastcreations.ai' with your actual email address
-    const recipient = "hello@beastcreations.ai"; 
-    const subject = encodeURIComponent(`Project Inquiry from ${formState.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formState.name}\n` +
-      `Email: ${formState.email}\n\n` +
-      `Project Description:\n${formState.description}`
-    );
-
-    // Open the email client
-    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-
-    // Show feedback in UI
+    // Simulate form submission
     setSubmitted(true);
   };
 
@@ -64,11 +50,10 @@ const Contact: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="bg-zinc-900 border border-zinc-800 p-12 text-center rounded-sm"
             >
-              <h3 className="text-2xl text-white font-bold mb-4">Email Client Opened</h3>
+              <h3 className="text-2xl text-white font-bold mb-4">Message Sent</h3>
               <p className="text-zinc-400 mb-8">
-                We've opened your default email app with the message pre-filled. 
-                <br />
-                Please click <span className="text-white font-bold">Send</span> to complete the request.
+                Thank you for reaching out to Beast Creations. <br />
+                We'll be in touch shortly to discuss your project.
               </p>
               <Button href="/" variant="outline">Return Home</Button>
             </motion.div>
@@ -118,7 +103,6 @@ const Contact: React.FC = () => {
 
               <div className="pt-8 text-center">
                 <Button type="submit" className="w-full md:w-auto px-12">Submit Request</Button>
-                <p className="mt-4 text-xs text-zinc-500 font-medium">This will open your email client.</p>
               </div>
             </form>
           )}
