@@ -111,7 +111,7 @@ const Home: React.FC = () => {
       {/* Why Us */}
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-800 group hover:border-beast-blue/30 transition-colors duration-500">
+          <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-800 group transition-colors duration-500">
             <iframe 
               src="https://player.vimeo.com/video/1148451221?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1" 
               frameBorder="0" 

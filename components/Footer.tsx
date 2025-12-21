@@ -45,7 +45,6 @@ const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-zinc-600 text-xs">
         <p>&copy; {new Date().getFullYear()} Beast Creations. All rights reserved.</p>
-        <p className="mt-2 md:mt-0">Designed & Built in Nigeria.</p>
       </div>
     </footer>
   );
