@@ -61,44 +61,52 @@ const Home: React.FC = () => {
       </Section>
 
       {/* Services */}
-      <Section id="services" className="bg-zinc-900/20">
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">Our Services</h2>
-          <p className="text-zinc-400">Tailored production tiers for every stage of growth.</p>
+      <div className="relative w-full overflow-hidden">
+        {/* Background Visuals for Services */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0,rgba(0,0,0,0.8)_100%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-beast-blue/10 rounded-full blur-[120px] opacity-30" />
         </div>
+        
+        <Section id="services" className="">
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">Our Services</h2>
+            <p className="text-zinc-400">Tailored production tiers for every stage of growth.</p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              icon: <Video className="w-8 h-8" />,
-              title: "Social & Growth",
-              desc: "Short-form and promotional videos designed for speed, clarity, and engagement on social platforms."
-            },
-            {
-              icon: <Layers className="w-8 h-8" />,
-              title: "Brand & Campaign",
-              desc: "Cinematic brand videos with strong storytelling, pacing, and visual consistency for marketing campaigns."
-            },
-            {
-              icon: <ShieldCheck className="w-8 h-8" />,
-              title: "Premium & Enterprise",
-              desc: "High-impact, broadcast-ready productions built for large brands requiring maximum polish and safety."
-            }
-          ].map((service, idx) => (
-            <motion.div
-              key={idx}
-              className="bg-zinc-950 border border-zinc-800 p-8 hover:border-beast-blue/50 transition-colors duration-300 group"
-              whileHover={{ y: -5 }}
-            >
-              <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center text-white mb-6 group-hover:bg-beast-blue group-hover:text-white transition-colors">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-              <p className="text-zinc-400 leading-relaxed text-sm">{service.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Video className="w-8 h-8" />,
+                title: "Social & Growth",
+                desc: "Short-form and promotional videos designed for speed, clarity, and engagement on social platforms."
+              },
+              {
+                icon: <Layers className="w-8 h-8" />,
+                title: "Brand & Campaign",
+                desc: "Cinematic brand videos with strong storytelling, pacing, and visual consistency for marketing campaigns."
+              },
+              {
+                icon: <ShieldCheck className="w-8 h-8" />,
+                title: "Premium & Enterprise",
+                desc: "High-impact, broadcast-ready productions built for large brands requiring maximum polish and safety."
+              }
+            ].map((service, idx) => (
+              <motion.div
+                key={idx}
+                className="bg-zinc-950/80 backdrop-blur-sm border border-zinc-800 p-8 hover:border-beast-blue/50 transition-colors duration-300 group"
+                whileHover={{ y: -5 }}
+              >
+                <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center text-white mb-6 group-hover:bg-beast-blue group-hover:text-white transition-colors">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
+                <p className="text-zinc-400 leading-relaxed text-sm">{service.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Section>
+      </div>
 
       {/* Why Us */}
       <Section>
@@ -164,14 +172,22 @@ const Home: React.FC = () => {
       </Section>
 
       {/* About */}
-      <Section id="about">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-6">About The Studio</h2>
-          <p className="text-2xl md:text-3xl text-white font-display leading-tight">
-            Beast Creations is a pioneer in AI-powered video production in Nigeria. We are experts in craft and forward-thinking execution, dedicated to pushing the boundaries of what's possible in digital storytelling without losing the human touch.
-          </p>
+      <div className="relative w-full overflow-hidden">
+        {/* Background Visuals for About */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0,rgba(0,0,0,0.8)_100%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-beast-blue/10 rounded-full blur-[120px] opacity-30" />
         </div>
-      </Section>
+
+        <Section id="about">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-6">About The Studio</h2>
+            <p className="text-2xl md:text-3xl text-white font-display leading-tight">
+              Beast Creations is a pioneer in AI-powered video production in Nigeria. We are experts in craft and forward-thinking execution, dedicated to pushing the boundaries of what's possible in digital storytelling without losing the human touch.
+            </p>
+          </div>
+        </Section>
+      </div>
 
       {/* CTA */}
       <Section className="py-32 text-center">
