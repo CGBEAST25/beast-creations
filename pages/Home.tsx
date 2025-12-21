@@ -103,7 +103,7 @@ const Home: React.FC = () => {
       {/* Why Us */}
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden bg-black">
+          <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-800">
             <iframe 
               src="https://player.vimeo.com/video/1148451221?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1" 
               frameBorder="0" 
@@ -113,8 +113,14 @@ const Home: React.FC = () => {
               title="Loopreel"
               style={{ pointerEvents: 'none' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-            <div className="absolute bottom-8 left-8">
+            
+            {/* Dark Overlay for cinematic mood */}
+            <div className="absolute inset-0 bg-black/40 z-10" />
+            
+            {/* Gradient Overlay for text visibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10" />
+            
+            <div className="absolute bottom-8 left-8 z-20">
               <span className="text-white font-display text-2xl font-bold">The Beast Standard</span>
             </div>
           </div>
