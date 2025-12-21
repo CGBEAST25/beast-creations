@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   const variants = {
     primary: "bg-white text-black hover:bg-gray-200 focus:ring-white border border-transparent",
     secondary: "bg-zinc-800 text-white hover:bg-zinc-700 focus:ring-zinc-700 border border-transparent",
-    outline: "bg-transparent text-white border border-zinc-700 hover:border-white focus:ring-white"
+    outline: "bg-transparent text-white border border-zinc-700 hover:border-beast-blue hover:text-beast-blue focus:ring-beast-blue"
   };
 
   const content = (

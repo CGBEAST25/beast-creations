@@ -11,8 +11,8 @@ const Home: React.FC = () => {
       <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
         {/* Background Visuals */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(50,50,50,0.15)_0,rgba(0,0,0,0.8)_100%)]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/10 rounded-full blur-[120px] opacity-30" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0,rgba(0,0,0,0.8)_100%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-beast-blue/10 rounded-full blur-[120px] opacity-30" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -21,12 +21,12 @@ const Home: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs tracking-widest uppercase mb-8">
+            <span className="inline-block py-1 px-3 rounded-full bg-beast-blue/5 border border-beast-blue/20 text-beast-blue text-xs tracking-widest uppercase mb-8">
               The Future of Production
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-display text-white tracking-tight leading-[1.1] mb-8">
               Cinematic AI Video <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-beast-blue">
                 Production for Brands
               </span>
             </h1>
@@ -87,10 +87,10 @@ const Home: React.FC = () => {
           ].map((service, idx) => (
             <motion.div
               key={idx}
-              className="bg-zinc-950 border border-zinc-800 p-8 hover:border-zinc-600 transition-colors duration-300 group"
+              className="bg-zinc-950 border border-zinc-800 p-8 hover:border-beast-blue/50 transition-colors duration-300 group"
               whileHover={{ y: -5 }}
             >
-              <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center text-white mb-6 group-hover:bg-white group-hover:text-black transition-colors">
+              <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center text-white mb-6 group-hover:bg-beast-blue group-hover:text-white transition-colors">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
@@ -103,7 +103,7 @@ const Home: React.FC = () => {
       {/* Why Us */}
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-800">
+          <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-800 group hover:border-beast-blue/30 transition-colors duration-500">
             <iframe 
               src="https://player.vimeo.com/video/1148451221?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1" 
               frameBorder="0" 
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                 "Built for Real Businesses, Not Experiments"
               ].map((item, i) => (
                 <div key={i} className="flex items-start space-x-4">
-                  <CheckCircle2 className="w-6 h-6 text-white shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-beast-blue shrink-0 mt-0.5" />
                   <span className="text-zinc-300 text-lg">{item}</span>
                 </div>
               ))}
@@ -148,7 +148,7 @@ const Home: React.FC = () => {
       {/* Trust & Professionalism */}
       <Section className="bg-white text-black text-center">
         <div className="max-w-4xl mx-auto">
-          <Cpu className="w-12 h-12 mx-auto mb-8 text-black" />
+          <Cpu className="w-12 h-12 mx-auto mb-8 text-beast-blue" />
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">Built on Trust & Technical Authority</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
             <div>

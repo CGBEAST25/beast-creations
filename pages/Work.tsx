@@ -84,7 +84,7 @@ const Work: React.FC = () => {
               className="group"
             >
               {/* Video Wrapper */}
-              <div className="relative aspect-video w-full overflow-hidden rounded-sm bg-zinc-900 border border-zinc-800 mb-6 shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]">
+              <div className="relative aspect-video w-full overflow-hidden rounded-sm bg-zinc-900 border border-zinc-800 mb-6 shadow-2xl transition-all duration-500 group-hover:scale-[1.01] group-hover:border-beast-blue/30">
                 <iframe 
                   src={`https://player.vimeo.com/video/${project.vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1`} 
                   className="absolute inset-0 w-full h-full"
@@ -100,11 +100,11 @@ const Work: React.FC = () => {
                 
                 <div className="space-y-1">
                   <p className="text-zinc-400 leading-relaxed">
-                    <span className="text-zinc-500 font-medium uppercase text-xs tracking-wider mr-2">Context</span>
+                    <span className="text-beast-blue font-medium uppercase text-xs tracking-wider mr-2">Context</span>
                     {project.context}
                   </p>
                   <p className="text-zinc-400 leading-relaxed">
-                    <span className="text-zinc-500 font-medium uppercase text-xs tracking-wider mr-2">Outcome</span>
+                    <span className="text-beast-blue font-medium uppercase text-xs tracking-wider mr-2">Outcome</span>
                     {project.outcome}
                   </p>
                 </div>

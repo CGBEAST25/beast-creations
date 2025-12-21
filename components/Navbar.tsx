@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2 z-50 group" onClick={handleNavClick}>
-          <Aperture className="w-8 h-8 text-white transition-transform duration-500 group-hover:rotate-180" />
+          <Aperture className="w-8 h-8 text-beast-blue transition-transform duration-500 group-hover:rotate-180" />
           <span className="text-xl font-bold font-display tracking-tight text-white">BEAST CREATIONS</span>
         </Link>
 

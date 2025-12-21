@@ -83,7 +83,7 @@ const Contact: React.FC = () => {
                   required
                   value={formState.name}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-zinc-700 py-4 text-white text-lg focus:border-white focus:outline-none transition-colors rounded-none placeholder-zinc-700"
+                  className="w-full bg-transparent border-b border-zinc-700 py-4 text-white text-lg focus:border-beast-blue focus:outline-none transition-colors rounded-none placeholder-zinc-700"
                   placeholder="John Doe"
                 />
               </div>
@@ -97,7 +97,7 @@ const Contact: React.FC = () => {
                   required
                   value={formState.email}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-zinc-700 py-4 text-white text-lg focus:border-white focus:outline-none transition-colors rounded-none placeholder-zinc-700"
+                  className="w-full bg-transparent border-b border-zinc-700 py-4 text-white text-lg focus:border-beast-blue focus:outline-none transition-colors rounded-none placeholder-zinc-700"
                   placeholder="john@company.com"
                 />
               </div>
@@ -111,7 +111,7 @@ const Contact: React.FC = () => {
                   rows={4}
                   value={formState.description}
                   onChange={handleChange}
-                  className="w-full bg-transparent border-b border-zinc-700 py-4 text-white text-lg focus:border-white focus:outline-none transition-colors rounded-none placeholder-zinc-700 resize-none"
+                  className="w-full bg-transparent border-b border-zinc-700 py-4 text-white text-lg focus:border-beast-blue focus:outline-none transition-colors rounded-none placeholder-zinc-700 resize-none"
                   placeholder="Tell us about your goals, timeline, and requirements..."
                 />
               </div>

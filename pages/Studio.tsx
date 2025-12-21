@@ -19,7 +19,7 @@ const Studio: React.FC = () => {
             <p className="text-2xl md:text-3xl text-zinc-300 font-display mb-8 leading-tight">
               Where cinematic storytelling meets next-generation AI.
             </p>
-            <div className="w-20 h-1 bg-white mb-8 mx-auto md:mx-0" />
+            <div className="w-20 h-1 bg-beast-blue mb-8 mx-auto md:mx-0" />
             <p className="text-lg md:text-xl text-zinc-400 leading-relaxed max-w-2xl">
               Beast Creations is a cinematic AI production studio focused on building high-impact visuals for modern brands. We operate at the intersection of emerging AI technology and traditional post-production craftsmanship — delivering work that feels intentional, polished, and human.
             </p>
@@ -83,10 +83,10 @@ const Studio: React.FC = () => {
                transition={{ delay: idx * 0.1 }}
                className="bg-zinc-950 border border-zinc-900 p-8 flex flex-col relative group hover:border-zinc-700 transition-colors"
              >
-                <div className="absolute top-8 right-8 text-zinc-800 text-4xl font-display font-bold opacity-50 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-8 right-8 text-zinc-800 text-4xl font-display font-bold opacity-50 group-hover:opacity-100 group-hover:text-beast-blue/20 transition-all">
                   {item.step}
                 </div>
-                <div className="w-12 h-12 bg-zinc-900 rounded-full flex items-center justify-center text-white mb-6">
+                <div className="w-12 h-12 bg-zinc-900 rounded-full flex items-center justify-center text-beast-blue mb-6">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
@@ -109,7 +109,7 @@ const Studio: React.FC = () => {
               "Focus on consistency, polish, and brand safety"
             ].map((text, i) => (
               <div key={i} className="flex items-start space-x-3">
-                <CheckCircle2 className="w-5 h-5 text-white shrink-0 mt-1" />
+                <CheckCircle2 className="w-5 h-5 text-beast-blue shrink-0 mt-1" />
                 <span className="text-zinc-300">{text}</span>
               </div>
             ))}
@@ -134,7 +134,7 @@ const Studio: React.FC = () => {
                { icon: <Monitor className="w-5 h-5" />, label: "Brand Storytelling" }
              ].map((cap, i) => (
                <div key={i} className="flex items-center space-x-3 bg-zinc-900/40 p-6 border border-zinc-800 rounded-sm hover:bg-zinc-900/60 transition-colors">
-                 <span className="text-white">{cap.icon}</span>
+                 <span className="text-beast-blue">{cap.icon}</span>
                  <span className="text-zinc-200 font-medium">{cap.label}</span>
                </div>
              ))}
