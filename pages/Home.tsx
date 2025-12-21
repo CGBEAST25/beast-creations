@@ -103,13 +103,17 @@ const Home: React.FC = () => {
       {/* Why Us */}
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden">
-            <img 
-              src="https://picsum.photos/800/800?grayscale" 
-              alt="Cinematic Abstract" 
-              className="absolute inset-0 w-full h-full object-cover opacity-60"
+          <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden bg-black">
+            <iframe 
+              src="https://player.vimeo.com/video/1148451221?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1" 
+              frameBorder="0" 
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="absolute inset-0 w-full h-full"
+              title="Loopreel"
+              style={{ pointerEvents: 'none' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
             <div className="absolute bottom-8 left-8">
               <span className="text-white font-display text-2xl font-bold">The Beast Standard</span>
             </div>
