@@ -74,14 +74,14 @@ const Studio: React.FC = () => {
               step: "01",
               title: "Concept & Strategy",
               desc: "Understanding the brand, message, and desired emotional response.",
-              image: "https://i.imgur.com/bdOulER.jpeg" // Team member 1
+              image: "https://i.imgur.com/8MiQMN6.jpeg" // Concept & Strategy (Updated)
             },
             {
               icon: <Wand2 className="w-5 h-5" />,
               step: "02",
               title: "AI Generation",
               desc: "Custom AI-driven visuals built with consistency, realism, and narrative intent.",
-              image: "https://i.imgur.com/hUMwcg1.jpeg" // Team member 2
+              image: "https://i.imgur.com/SbxpQBT.jpeg" // AI Generation (Updated)
             },
             {
               icon: <Film className="w-5 h-5" />,

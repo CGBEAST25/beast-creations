@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, CheckCircle2, Video, Layers, ShieldCheck, Cpu } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Section from '../components/Section.tsx';
 import Button from '../components/Button.tsx';
 
@@ -186,9 +187,12 @@ const Home: React.FC = () => {
               Beast Creations is a pioneer in AI-powered video production in Nigeria. We are experts in craft and forward-thinking execution, dedicated to pushing the boundaries of what's possible in digital storytelling without losing the human touch.
             </p>
             <div className="w-full flex justify-end">
-               <Button href="#/studio" className="bg-black border border-zinc-800 text-xs px-6 py-3 uppercase tracking-widest hover:bg-zinc-900 hover:border-beast-blue transition-colors text-white">
+               <Link 
+                  to="/studio" 
+                  className="bg-black border border-beast-blue text-white text-[10px] px-4 py-1.5 uppercase tracking-widest rounded-lg inline-block"
+               >
                   Learn More
-               </Button>
+               </Link>
             </div>
           </div>
         </Section>
