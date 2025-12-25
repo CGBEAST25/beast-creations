@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
           <ul className="space-y-4">
             <li><Link to="/work" className="text-zinc-500 hover:text-white transition-colors text-sm">Work</Link></li>
             <li><Link to="/" className="text-zinc-500 hover:text-white transition-colors text-sm">Services</Link></li>
-            <li><Link to="/" className="text-zinc-500 hover:text-white transition-colors text-sm">About</Link></li>
+            <li><Link to="/studio" className="text-zinc-500 hover:text-white transition-colors text-sm">About</Link></li>
           </ul>
         </div>
 

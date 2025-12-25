@@ -61,71 +61,85 @@ const Studio: React.FC = () => {
       </div>
 
       {/* 3. PROCESS SECTION */}
-      <div className="relative w-full overflow-hidden">
-        {/* Background Visuals for Process */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0,rgba(0,0,0,0.8)_100%)]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-beast-blue/10 rounded-full blur-[120px] opacity-30" />
+      <Section className="relative z-10">
+        <div className="mb-16 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-white">Our Process</h2>
+          <p className="text-zinc-400 mt-4">From concept to final master.</p>
         </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            {
+              icon: <Lightbulb className="w-5 h-5" />,
+              step: "01",
+              title: "Concept & Strategy",
+              desc: "Understanding the brand, message, and desired emotional response.",
+              image: "https://i.imgur.com/bdOulER.jpeg" // Team member 1
+            },
+            {
+              icon: <Wand2 className="w-5 h-5" />,
+              step: "02",
+              title: "AI Generation",
+              desc: "Custom AI-driven visuals built with consistency, realism, and narrative intent.",
+              image: "https://i.imgur.com/hUMwcg1.jpeg" // Team member 2
+            },
+            {
+              icon: <Film className="w-5 h-5" />,
+              step: "03",
+              title: "Post-Production",
+              desc: "Traditional editing, sound design, pacing, and finishing to achieve a cinematic result.",
+              image: "https://i.imgur.com/GcpQ2Pl.jpeg" // Post-production A
+            },
+            {
+              icon: <Send className="w-5 h-5" />,
+              step: "04",
+              title: "Delivery",
+              desc: "Final assets optimized for platform, quality, and commercial use.",
+              image: "https://i.imgur.com/MUy0zRr.jpeg" // Finished product on screen
+            }
+          ].map((item, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="flex flex-col relative group"
+              >
+                {/* Image Card */}
+                <div className="relative h-64 w-full overflow-hidden rounded-sm mb-6 bg-zinc-900 border border-zinc-900">
+                    <img 
+                        src={item.image} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out grayscale group-hover:grayscale-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                    <div className="absolute top-4 right-4 w-10 h-10 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center text-white font-display font-bold border border-white/10">
+                        {item.step}
+                    </div>
+                </div>
 
-        <Section className="relative z-10">
-          <div className="mb-16 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white">Our Process</h2>
-            <p className="text-zinc-400 mt-4">From concept to final master.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <Lightbulb className="w-6 h-6" />,
-                step: "01",
-                title: "Concept & Strategy",
-                desc: "Understanding the brand, message, and desired emotional response."
-              },
-              {
-                icon: <Wand2 className="w-6 h-6" />,
-                step: "02",
-                title: "AI Generation",
-                desc: "Custom AI-driven visuals built with consistency, realism, and narrative intent."
-              },
-              {
-                icon: <Film className="w-6 h-6" />,
-                step: "03",
-                title: "Post-Production",
-                desc: "Traditional editing, sound design, pacing, and finishing to achieve a cinematic result."
-              },
-              {
-                icon: <Send className="w-6 h-6" />,
-                step: "04",
-                title: "Delivery",
-                desc: "Final assets optimized for platform, quality, and commercial use."
-              }
-            ].map((item, idx) => (
-               <motion.div 
-                 key={idx}
-                 initial={{ opacity: 0, y: 20 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 viewport={{ once: true }}
-                 transition={{ delay: idx * 0.1 }}
-                 className="bg-zinc-950/80 backdrop-blur-sm border border-zinc-900 p-8 flex flex-col relative group hover:border-zinc-700 transition-colors"
-               >
-                  <div className="absolute top-8 right-8 text-zinc-800 text-4xl font-display font-bold opacity-50 group-hover:opacity-100 group-hover:text-beast-blue/20 transition-all">
-                    {item.step}
-                  </div>
-                  <div className="w-12 h-12 bg-zinc-900 rounded-full flex items-center justify-center text-beast-blue mb-6">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
-               </motion.div>
-            ))}
-          </div>
-        </Section>
-      </div>
+                {/* Content */}
+                <div className="flex items-start space-x-4">
+                     <div className="w-10 h-10 shrink-0 bg-zinc-900 rounded-full flex items-center justify-center text-beast-blue group-hover:bg-beast-blue group-hover:text-white transition-colors">
+                        {item.icon}
+                    </div>
+                    <div>
+                        <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                        <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                </div>
+              </motion.div>
+          ))}
+        </div>
+      </Section>
 
-      {/* 4. WHY TRUST BEAST CREATIONS */}
-      <Section className="bg-zinc-950 border-y border-zinc-900">
-        <div className="max-w-4xl mx-auto">
+      {/* 4. WHY TRUST BEAST CREATIONS - Tech Blue BG */}
+      <Section className="bg-[#050a14] border-y border-beast-blue/20 relative overflow-hidden">
+        {/* Tech Blue Gradient Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0,transparent_70%)] pointer-events-none" />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-10 text-center">Why Beast Creations</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
             {[
@@ -152,17 +166,50 @@ const Studio: React.FC = () => {
             <p className="text-zinc-400 leading-relaxed mb-6">
               Our studio is built for speed, quality, and scalability. We combine advanced AI pipelines with professional post-production systems to deliver broadcast-ready content efficiently.
             </p>
+            <div className="hidden lg:block w-12 h-1 bg-beast-blue mt-8" />
           </div>
+          
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
              {[
-               { icon: <Zap className="w-5 h-5" />, label: "AI Production" },
-               { icon: <Layers className="w-5 h-5" />, label: "Cinematic Editing" },
-               { icon: <Music className="w-5 h-5" />, label: "Sound Design" },
-               { icon: <Monitor className="w-5 h-5" />, label: "Brand Storytelling" }
+               { 
+                   icon: <Zap className="w-5 h-5" />, 
+                   label: "AI Production", 
+                   image: "https://i.imgur.com/Q9Fkjgm.jpeg" // Gears
+               },
+               { 
+                   icon: <Layers className="w-5 h-5" />, 
+                   label: "Cinematic Editing", 
+                   image: "https://i.imgur.com/YTgxOQn.jpeg" // Editor working 2
+               },
+               { 
+                   icon: <Music className="w-5 h-5" />, 
+                   label: "Sound Design", 
+                   image: "https://i.imgur.com/w8A2FhH.jpeg" // Post-production B
+               },
+               { 
+                   icon: <Monitor className="w-5 h-5" />, 
+                   label: "Brand Storytelling", 
+                   image: "https://i.imgur.com/7YVUhDj.jpeg" // Happy client A
+               }
              ].map((cap, i) => (
-               <div key={i} className="flex items-center space-x-3 bg-zinc-900/40 p-6 border border-zinc-800 rounded-sm hover:bg-zinc-900/60 transition-colors">
-                 <span className="text-beast-blue">{cap.icon}</span>
-                 <span className="text-zinc-200 font-medium">{cap.label}</span>
+               <div key={i} className="group relative h-48 sm:h-64 overflow-hidden rounded-sm border border-zinc-800">
+                 {/* Background Image */}
+                 <div className="absolute inset-0">
+                    <img 
+                        src={cap.image} 
+                        alt={cap.label} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                 </div>
+
+                 {/* Content Overlay */}
+                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                    <div className="flex items-center space-x-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span className="text-beast-blue bg-black/50 p-2 rounded-full backdrop-blur-sm">{cap.icon}</span>
+                        <span className="text-white font-bold font-display text-lg tracking-wide">{cap.label}</span>
+                    </div>
+                 </div>
                </div>
              ))}
           </div>

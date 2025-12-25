@@ -35,7 +35,7 @@ const Home: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Button href="#/contact" withArrow>Start a Project</Button>
-              <Button href="#work" variant="outline">View Our Work</Button>
+              <Button href="#/work" variant="outline">View Our Work</Button>
             </div>
           </motion.div>
         </div>
@@ -180,11 +180,16 @@ const Home: React.FC = () => {
         </div>
 
         <Section id="about">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
             <h2 className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-6">About The Studio</h2>
-            <p className="text-2xl md:text-3xl text-white font-display leading-tight">
+            <p className="text-2xl md:text-3xl text-white font-display leading-tight mb-8">
               Beast Creations is a pioneer in AI-powered video production in Nigeria. We are experts in craft and forward-thinking execution, dedicated to pushing the boundaries of what's possible in digital storytelling without losing the human touch.
             </p>
+            <div className="w-full flex justify-end">
+               <Button href="#/studio" className="bg-black border border-zinc-800 text-xs px-6 py-3 uppercase tracking-widest hover:bg-zinc-900 hover:border-beast-blue transition-colors text-white">
+                  Learn More
+               </Button>
+            </div>
           </div>
         </Section>
       </div>
@@ -194,9 +199,14 @@ const Home: React.FC = () => {
         <h2 className="text-5xl md:text-7xl font-bold font-display text-white mb-8">
           Ready to create <br /> something powerful?
         </h2>
-        <Button href="#/contact" withArrow className="text-lg px-10 py-5">
-          Contact Beast Creations
-        </Button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button href="#/contact" withArrow className="text-lg px-10 py-5">
+            Contact Beast Creations
+          </Button>
+          <Button href="#/work" variant="outline" className="text-lg px-10 py-5">
+            Portfolio
+          </Button>
+        </div>
       </Section>
     </div>
   );
