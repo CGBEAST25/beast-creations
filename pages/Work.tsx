@@ -134,17 +134,15 @@ const Work: React.FC = () => {
       </Section>
 
       {/* Authority Statement */}
-      <Section className="">
-        <div className="max-w-4xl mx-auto relative overflow-hidden rounded-2xl border border-beast-blue/20">
-           {/* Container Background */}
-           <div className="absolute inset-0 bg-beast-blue/5" />
-           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1)_0,rgba(0,0,0,0)_100%)]" />
-           
-           <div className="relative z-10 p-10 md:p-16 text-center">
-             <p className="text-lg md:text-xl text-zinc-200 leading-loose italic font-light">
-               "Every project is built using a hybrid production model — combining cutting-edge AI generation with traditional post-production, cinematic pacing, and human storytelling. The result is work that feels intentional, polished, and emotionally resonant."
-             </p>
-           </div>
+      <Section className="relative overflow-hidden border-y border-zinc-900">
+        {/* Container Background */}
+        <div className="absolute inset-0 bg-beast-blue/5" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1)_0,rgba(0,0,0,0)_100%)]" />
+        
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <p className="text-lg md:text-xl text-zinc-300 leading-loose italic font-light">
+            "Every project is built using a hybrid production model — combining cutting-edge AI generation with traditional post-production, cinematic pacing, and human storytelling. The result is work that feels intentional, polished, and emotionally resonant."
+          </p>
         </div>
       </Section>
 
