@@ -86,12 +86,7 @@ const Work: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Button 
-                href="#/contact" 
-                withArrow 
-                variant="outline"
-                className="border-beast-blue text-beast-blue hover:bg-beast-blue hover:text-white hover:border-beast-blue"
-              >
+              <Button href="#/contact" withArrow>
                 Start Your Project
               </Button>
             </motion.div>
@@ -143,15 +138,16 @@ const Work: React.FC = () => {
       </Section>
 
       {/* Authority Statement */}
-      <Section className="relative overflow-hidden border-y border-zinc-900">
-        {/* Container Background */}
-        <div className="absolute inset-0 bg-beast-blue/5" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1)_0,rgba(0,0,0,0)_100%)]" />
-        
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <p className="text-lg md:text-xl text-zinc-300 leading-loose italic font-light">
-            "Every project is built using a hybrid production model — combining cutting-edge AI generation with traditional post-production, cinematic pacing, and human storytelling. The result is work that feels intentional, polished, and emotionally resonant."
-          </p>
+      <Section>
+        <div className="relative w-full rounded-2xl overflow-hidden bg-zinc-900/50 border border-zinc-800 p-12 md:p-16">
+           <div className="absolute inset-0 bg-beast-blue/5" />
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-beast-blue/10 rounded-full blur-[100px] opacity-20 pointer-events-none" />
+           
+           <div className="relative z-10 max-w-4xl mx-auto text-center">
+             <p className="text-lg md:text-xl text-zinc-200 leading-loose italic font-light">
+               "Every project is built using a hybrid production model — combining cutting-edge AI generation with traditional post-production, cinematic pacing, and human storytelling. The result is work that feels intentional, polished, and emotionally resonant."
+             </p>
+           </div>
         </div>
       </Section>
 

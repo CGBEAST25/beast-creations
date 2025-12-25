@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Section from '../components/Section.tsx';
 import Button from '../components/Button.tsx';
 
@@ -23,7 +24,17 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="pt-20 min-h-screen flex flex-col">
+    <div className="pt-20 min-h-screen flex flex-col w-full relative">
+      {/* Back Navigation */}
+      <div className="absolute top-24 w-full z-20 pointer-events-none">
+        <div className="max-w-7xl mx-auto px-6">
+          <Link to="/" className="pointer-events-auto inline-flex items-center text-zinc-400 hover:text-white transition-colors group">
+            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-sm font-medium">Back</span>
+          </Link>
+        </div>
+      </div>
+
       <Section className="flex-grow flex items-center justify-center">
         <div className="w-full max-w-2xl mx-auto">
           <div className="text-center mb-12">
