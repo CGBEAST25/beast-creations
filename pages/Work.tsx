@@ -59,9 +59,11 @@ const Work: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-5xl md:text-7xl font-display font-bold text-white mb-6"
+              className="text-5xl md:text-7xl font-display font-bold mb-6"
             >
-              Our Work
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-beast-blue">
+                Our Work
+              </span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -84,7 +86,14 @@ const Work: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Button href="#/contact" withArrow>Start Your Project</Button>
+              <Button 
+                href="#/contact" 
+                withArrow 
+                variant="outline"
+                className="border-beast-blue text-beast-blue hover:bg-beast-blue hover:text-white hover:border-beast-blue"
+              >
+                Start Your Project
+              </Button>
             </motion.div>
           </div>
         </Section>
