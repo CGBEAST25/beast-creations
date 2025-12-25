@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Section from '../components/Section.tsx';
 import Button from '../components/Button.tsx';
 
@@ -33,43 +34,61 @@ const Work: React.FC = () => {
   ];
 
   return (
-    <div className="pt-20 min-h-screen flex flex-col">
-      {/* Hero Section */}
-      <Section className="text-center pb-0">
-        <div className="max-w-4xl mx-auto mb-16">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl md:text-7xl font-display font-bold text-white mb-6"
-          >
-            Our Work
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl md:text-2xl text-zinc-300 mb-4 max-w-2xl mx-auto leading-relaxed"
-          >
-            Selected projects showcasing cinematic AI storytelling, crafted with human precision.
-          </motion.p>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm text-zinc-500 uppercase tracking-widest mb-8"
-          >
-            High-impact visuals built for brands that want to stand out.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <Button href="#/contact" withArrow>Start Your Project</Button>
-          </motion.div>
+    <div className="pt-20 min-h-screen flex flex-col w-full relative">
+      {/* Back Navigation */}
+      <div className="absolute top-24 w-full z-20 pointer-events-none">
+        <div className="max-w-7xl mx-auto px-6">
+          <Link to="/" className="pointer-events-auto inline-flex items-center text-zinc-400 hover:text-white transition-colors group">
+            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-sm font-medium">Back</span>
+          </Link>
         </div>
-      </Section>
+      </div>
+
+      {/* Hero Section with Background */}
+      <div className="relative w-full overflow-hidden">
+        {/* Background Visuals */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0,rgba(0,0,0,0.8)_100%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-beast-blue/10 rounded-full blur-[120px] opacity-30" />
+        </div>
+
+        <Section className="text-center pb-0 pt-32">
+          <div className="max-w-4xl mx-auto mb-16 relative z-10">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-5xl md:text-7xl font-display font-bold text-white mb-6"
+            >
+              Our Work
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-xl md:text-2xl text-zinc-300 mb-4 max-w-2xl mx-auto leading-relaxed"
+            >
+              Selected projects showcasing cinematic AI storytelling, crafted with human precision.
+            </motion.p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-sm text-zinc-500 uppercase tracking-widest mb-8"
+            >
+              High-impact visuals built for brands that want to stand out.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Button href="#/contact" withArrow>Start Your Project</Button>
+            </motion.div>
+          </div>
+        </Section>
+      </div>
 
       {/* Video Showcase Section */}
       <Section className="pt-0">
@@ -115,11 +134,17 @@ const Work: React.FC = () => {
       </Section>
 
       {/* Authority Statement */}
-      <Section className="bg-zinc-900/30 border-y border-zinc-900">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-lg md:text-xl text-zinc-300 leading-loose italic font-light">
-            "Every project is built using a hybrid production model — combining cutting-edge AI generation with traditional post-production, cinematic pacing, and human storytelling. The result is work that feels intentional, polished, and emotionally resonant."
-          </p>
+      <Section className="">
+        <div className="max-w-4xl mx-auto relative overflow-hidden rounded-2xl border border-beast-blue/20">
+           {/* Container Background */}
+           <div className="absolute inset-0 bg-beast-blue/5" />
+           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1)_0,rgba(0,0,0,0)_100%)]" />
+           
+           <div className="relative z-10 p-10 md:p-16 text-center">
+             <p className="text-lg md:text-xl text-zinc-200 leading-loose italic font-light">
+               "Every project is built using a hybrid production model — combining cutting-edge AI generation with traditional post-production, cinematic pacing, and human storytelling. The result is work that feels intentional, polished, and emotionally resonant."
+             </p>
+           </div>
         </div>
       </Section>
 
@@ -127,7 +152,10 @@ const Work: React.FC = () => {
       <Section className="text-center py-32">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-8">
-            Ready to create your <br/> cinematic AI video?
+            Ready to create your <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-beast-blue">
+              cinematic AI video?
+            </span>
           </h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="#/contact" withArrow className="text-lg px-10 py-5">

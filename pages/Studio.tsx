@@ -1,14 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Lightbulb, Wand2, Film, Send, CheckCircle2, Zap, Monitor, Music, Layers } from 'lucide-react';
+import { Lightbulb, Wand2, Film, Send, CheckCircle2, Zap, Monitor, Music, Layers, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Section from '../components/Section.tsx';
 import Button from '../components/Button.tsx';
 
 const Studio: React.FC = () => {
   return (
-    <div className="pt-20 min-h-screen flex flex-col w-full">
+    <div className="pt-20 min-h-screen flex flex-col w-full relative">
+      {/* Back Navigation */}
+      <div className="absolute top-24 w-full z-20 pointer-events-none">
+        <div className="max-w-7xl mx-auto px-6">
+          <Link to="/" className="pointer-events-auto inline-flex items-center text-zinc-400 hover:text-white transition-colors group">
+            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-sm font-medium">Back</span>
+          </Link>
+        </div>
+      </div>
+
       {/* 1. INTRO SECTION */}
-      <Section className="pb-0">
+      <Section className="pb-0 pt-32">
         <div className="max-w-4xl mx-auto text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -28,18 +39,26 @@ const Studio: React.FC = () => {
       </Section>
 
       {/* 2. PHILOSOPHY SECTION */}
-      <Section className="bg-zinc-900/20 my-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-           <div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">Our Philosophy</h2>
-           </div>
-           <div>
-              <p className="text-lg text-zinc-300 leading-relaxed border-l-2 border-white pl-6">
-                We believe AI is not a replacement for creativity — it is a tool. Real impact comes from how technology is guided, shaped, and refined by human judgment. Our work is built on clarity, emotional pacing, and cinematic discipline. Every project is designed to feel considered, not generated.
-              </p>
-           </div>
+      <div className="relative w-full overflow-hidden my-10">
+        {/* Background Visuals for Philosophy */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0,rgba(0,0,0,0.8)_100%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-beast-blue/10 rounded-full blur-[100px] opacity-20" />
         </div>
-      </Section>
+
+        <Section className="relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+             <div>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">Our Philosophy</h2>
+             </div>
+             <div>
+                <p className="text-lg text-zinc-300 leading-relaxed border-l-2 border-white pl-6">
+                  We believe AI is not a replacement for creativity — it is a tool. Real impact comes from how technology is guided, shaped, and refined by human judgment. Our work is built on clarity, emotional pacing, and cinematic discipline. Every project is designed to feel considered, not generated.
+                </p>
+             </div>
+          </div>
+        </Section>
+      </div>
 
       {/* 3. PROCESS SECTION */}
       <Section>
@@ -146,7 +165,10 @@ const Studio: React.FC = () => {
       <Section className="text-center py-32">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold font-display text-white mb-6">
-            Let’s Build Something <br/> Intentional.
+            Let’s Build Something <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-beast-blue">
+              Intentional.
+            </span>
           </h2>
           <p className="text-zinc-400 mb-8">Clear process. Cinematic results. Professional delivery.</p>
           <Button href="#/contact" withArrow className="text-lg px-10 py-5">
