@@ -139,7 +139,7 @@ const Work: React.FC = () => {
 
       {/* Authority Statement */}
       <Section>
-        <div className="relative w-full rounded-2xl overflow-hidden bg-[#050a14] border border-[#1e293b]/50 p-12 md:py-24 md:px-12 flex items-center justify-center">
+        <div className="relative w-full rounded-2xl overflow-hidden bg-[#050a14] border border-[#1e293b]/50 p-12 md:py-20 md:px-12 flex items-center justify-center">
            {/* Very subtle blue tint to match deep dark blue hue in image */}
            <div className="absolute inset-0 bg-blue-900/5 pointer-events-none" />
            
@@ -147,7 +147,7 @@ const Work: React.FC = () => {
              <p className="text-lg md:text-xl text-zinc-200 leading-relaxed italic font-light tracking-wide">
                "Every project is built using a hybrid production model — combining cutting-edge<br className="hidden md:block" />
                AI generation with traditional post-production, cinematic pacing, and human<br className="hidden md:block" />
-               storytelling. The result is work that feels intentional, polished, and emotionally<br className="hidden md:block" />
+               storytelling. The result is work that feels intentional, polished, and emotionally <br className="hidden md:block" />
                resonant."
              </p>
            </div>
